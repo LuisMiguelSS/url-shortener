@@ -1,10 +1,15 @@
 {
   "name": "url-shortener",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Simple URL shortener using NodeJS, EJS and MongoDB",
+  "main": "server.js",
+  "private":"true",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/luismiguelss/url-shortener.git"
+  },
   "scripts": {
-    "devServerStart": "nodemon server.js"
+    "dev": "nodemon -r dotenv/config server.js"
   },
   "author": "Luis Miguel Soto Sánchez",
   "license": "ISC",
@@ -15,6 +20,7 @@
     "shortid": "^2.2.15"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.4"
   }
 }
