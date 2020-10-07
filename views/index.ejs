@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/cover.css">
+
+    <!-- JS, Popper.js, and jQuery CDNs -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="site-wrapper">
+
+        <div class="site-wrapper-inner">
+  
+          <div class="container">
+  
+            <div class="masthead clearfix">
+              <div class="container inner">
+                <h3 class="masthead-brand"><a href="/">URL Shortener</a></h3>
+                <!--
+                <nav>
+                  <ul class="nav masthead-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </nav>
+                -->
+              </div>
+            </div>
+  
+            <div class="inner cover">
+                <h1 class="cover-heading">Your URL shortener</h1>
+                <form action="/shorten" method="POST" class="my-4 form-inline">
+                    <label for="fullUrl" class="sr-only">Your Url</label>
+                    <input required type="url" placeholder="Your Url" name="fullUrl" id="fullUrl" class="col form-control mr-2">
+                    <button class="btn btn-info" type="submit">Shrink</button>
+                </form>
+                <% if (shortenedUrl) { %> 
+                    <h3>Your shortened URL: <a href="<%= shortenedUrl %>"><%= shortenedUrl %></a></h3>
+                <% } %> 
+        
+                <h3>Total shortened URLS: <%= shortUrls.length %> </h3>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+    
+</body>
+</html>
